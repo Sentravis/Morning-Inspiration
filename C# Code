@@ -1,0 +1,284 @@
+using System;
+
+namespace MorningInspiration
+{
+    class MainClass
+    {
+        public static void Main()
+
+        {
+
+            /* 
+             * Main method that asks the user the mood that they're in. Depending
+             * om the answer, a different method is called.
+             */
+
+            Console.WriteLine("Goodmorning! How are you feeling today?\n");
+            string mood = Console.ReadLine();
+
+            if (mood == "happy")
+            {
+                Happy();
+            }
+            else if (mood == "sad")
+            {
+                Sad();
+            }
+            else if (mood == "tired")
+            {
+                Tired();
+            }
+            else
+            {
+                General();
+            }
+
+
+        }
+
+        public static void Happy()
+        {
+
+            /*
+             * If the user inputs "happy" a random qupte is chosen from the 5 
+             * quotes litsed in this method.
+             */
+            
+            string [] happy;
+            happy = new string [5];
+            Random random = new Random();
+            int output = random.Next(happy.Length);
+
+
+            happy[0] = "The true secret of happiness lies in the " +
+                 "taking a genuine interest in all the details of daily life." +
+                 "\n - William Morris";
+
+            happy[1] = "Happiness consists more in conveniences of " +
+                 "pleasure that occur everyday than in great pieces of good " +
+                 "fortune that happen but seldom." +
+                 "\n - Benajmin Franklin";
+
+            happy[2] = "Life is a journey, and if you fall in love with the " +
+               "journey, you will be in love forever. " +
+               "\n - Peter Hagerty";
+
+            happy[3] = "You cannot judge what should bring others joy, and " +
+                "others cannot judge what should bring you joy. " +
+                "\n - Alan Cohen";
+
+            happy[4] = "Happiness is not having what you want. It is " +
+               "appreciating what you have. " +
+               "\n - Unknown";
+
+
+            /*
+             * The application then askes the user if they want antoher quote
+             */
+
+            Console.WriteLine("\n" + happy[output]);
+
+            Console.WriteLine("\nWould you like another quote?");
+            string answer = Console.ReadLine();
+
+            if (answer == "Yes" || answer == "yes") // another quote is given
+            {
+                Happy();
+            }
+
+            else if (answer == "No" || answer == "no") // exits the application
+            {
+                Console.WriteLine("\nRemember, regardless of what happens. the day " +
+                    "will be what you make of it. Enjoy it! ");
+            }
+
+            else // takes the user back to the main menu
+            {
+                Console.WriteLine("\nInvalid, let's start over.. \n");
+                Main();
+
+            }
+
+
+
+        }
+        public static void Sad()
+        {
+
+            /*
+             * If the user inputs "sad" a random qupte is chosen from the 5 
+             * quotes litsed in this method.
+             */
+
+            string[] sad;
+            sad = new string[5];
+            Random random = new Random();
+            int output = random.Next(sad.Length);
+
+
+            sad[0] = "Experiencing sadness and anger can make you feel more " +
+                "creative, and by being creative you can get beyond your pain " +
+                "or negativity." +
+                "\n – Yoko Ono";
+
+            sad[1] = "What brings us to tears, will lead us to grace. Our pain " +
+                "is never wasted." +
+                "\n - Bob Goff";
+
+            sad[2] = "Sometimes it takes sadness to know happiness, noise to " +
+                "appreciate silence and absence to value presence. " +
+                "\n - Unknown";
+
+            sad[3] = "The good life is not one immune to sadness but one in " +
+                "which suffering contributes to our development. " +
+                "\n - Alain de Botton";
+
+            sad[4] = "Your sadness is a gift. Don’t reject it. Don’t rush it. " +
+                "Live it fully and use it as fuel to change and grow. " +
+                "\n - Maxime Lagacé ";
+
+
+            Console.WriteLine("\n" + sad[output]);
+
+
+            Console.WriteLine("\nWould you like another quote?");
+            string answer = Console.ReadLine();
+
+            if (answer == "Yes" || answer == "yes") // another quote is given
+            {
+                Sad();
+            }
+             
+            else if (answer == "No" || answer == "no") // exits the application
+            {
+                Console.WriteLine("\nRemember, regardless of what happens. the day " +
+                    "will be what you make of it. Enjoy it! ");
+            }
+
+            else // takes the user back to the main menu
+            {
+                Console.WriteLine("\nInvalid, let's start over.. \n");
+                Main();
+
+            }
+
+
+        }
+        public static void Tired()
+        {
+
+            /*
+             * If the user inputs "tired" a random qupte is chosen from the 5 
+             * quotes litsed in this method.
+             */
+
+
+            string[] tired;
+            tired = new string[5];
+            Random random = new Random();
+            int output = random.Next(tired.Length);
+
+            tired[0] = "Even when you have every right to be tired of everything, " +
+                "Never be tired of living." +
+                "\n - Terry Mark";
+
+            tired[1] = "Don't stop when you are tired. Stop when you are done!!" +
+                " \n = Brayden Brad";
+
+            tired[2] = "Never be tired of a dream, if not fulfilled. Fear of " +
+                "failure should not deter you from your path of self belief. " +
+                "Your belief and determination will get you to your destination " +
+                "and make the dream come true." +
+                "\n - Anil Sinha";
+
+            tired[3] = "Perseverance is the hard work you do after you get tired " +
+                "of doing the hard work you already did." +
+                "\n - Newt Gingrich";
+            tired[4] = "Tiredness is just something that is appearing; it's not " +
+                "who you are. " +
+                "\n - Nirmala";
+
+
+            Console.WriteLine("\n" + tired[output]);
+
+
+            Console.WriteLine("\nWould you like another quote?");
+            string answer = Console.ReadLine();
+
+            if (answer == "Yes" || answer == "yes") // another quote is given
+            {
+                Tired();
+            }
+
+            else if (answer == "No" || answer == "no") // exits the application
+            {
+                Console.WriteLine("\nRemember, regardless of what happens. the day " +
+                    "will be what you make of it. Enjoy it! ");
+            }
+
+            else // takes the user back to the main menu
+            {
+                Console.WriteLine("\nInvalid, let's start over.. \n");
+                Main();
+
+            }
+
+        }
+        public static void General()
+        {
+
+            /*
+             * If the user inputs anything other than the moods given, a random 
+             * qupte is chosen from the 5 quotes litsed in this method.
+             */
+
+            string[] gen;
+            gen = new string[5];
+            Random random = new Random();
+            int output = random.Next(gen.Length);
+
+            gen[0] = "Creativity is intelligence having fun." +
+                "\n - Albert Einstein";
+
+            gen[1] = "Optimism is the one quality more associated with success " +
+                "and happiness than any other." +
+                "\n - Brian Tracy";
+
+            gen[2] = "Always keep your eyes open. Keep watching. Because " +
+                "whatever you see can inspire you." +
+                "\n - Grace Coddington";
+
+            gen[3] = "What you get by achieving your goals is not as important " +
+                "as what you become by achieving your goals." +
+                "\n - Henry David Thoreau";
+
+            gen[4] = "If the plan doesn’t work, change the plan, but never the goal." +
+                "\n - Unknown";
+
+
+            Console.WriteLine("\n" + gen[output]);
+
+
+            Console.WriteLine("\nWould you like another quote?");
+            string answer = Console.ReadLine();
+
+            if (answer == "Yes" || answer == "yes") // another quote is given
+            {
+                General();
+            }
+
+            else if (answer == "No" || answer == "no") // exits the application
+            {
+                Console.WriteLine("\nRemember, regardless of what happens. the day " +
+                    "will be what you make of it. Enjoy it! ");
+            }
+
+            else // takes the user back to the main menu
+            {
+                Console.WriteLine("\nInvalid, let's start over.. \n");
+                Main();
+
+            }
+        }
+    }
+}
