@@ -10,8 +10,4 @@ The function of this application is to take a mood from user input
 
 Continuous updates being made.
 
-
-Creation started on Feb 16, 2021
-
-Last updated Mar 24, 2021
  
