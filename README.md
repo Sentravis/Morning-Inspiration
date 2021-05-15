@@ -1,4 +1,4 @@
-# MorningInspiration
+# Morning Inspiration
 C# Application
 
 
